@@ -54,33 +54,3 @@ httpServer.listen(port, function() {
 // This will enable the Live Query real-time server
 ParseServer.createLiveQueryServer(httpServer);
 
-// mailgun adapter
-var fs = require('fs'); //required if loading html from file!
- 
-var server = ParseServer({
-  emailAdapter: {
-    module: 'parse-server-mailgun-adapter-template',
-    options: {
-      // The address that your emails come from
-      fromAddress: 'no-reply@sandbox8dac4658ad154b24a74671b1d9e4e171.mailgun.org',
-      // Your domain from mailgun.com
-      domain: 'sandbox8dac4658ad154b24a74671b1d9e4e171.mailgun.org',
-      // Your API key from mailgun.com
-      apiKey: 'key-8fb8246b461ab316d3487c825e951c53',
- 
-      // Verification email subject
-      verificationSubject: 'Please verify your e-mail for %appname%',
-      // Verification email body
-      verificationBody: 'Hi,\n\nYou are being asked to confirm the e-mail address %email% with %appname%\n\nClick here to confirm it:\n%link%',
-      //OPTIONAL (will send HTML version of email):
-      verificationBodyHTML: fs.readFileSync("./verificationBody.html", "utf8") ||  null,
- 
-      // Password reset email subject
-      passwordResetSubject: 'Password Reset Request for %appname%',
-      // Password reset email body
-      passwordResetBody: 'Hi,\n\nYou requested a password reset for %appname%.\n\nClick here to reset it:\n%link%',
-      //OPTIONAL (will send HTML version of email):
-      passwordResetBodyHTML: "<!DOCTYPE html><html xmlns=http://www.w3.org/1999/xhtml>........"
-    }
-  }
-});
