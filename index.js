@@ -13,6 +13,7 @@ if (!databaseUri) {
 const resolve = require('path').resolve;
 
 var api = new ParseServer({
+  verifyUserEmails: true,
   databaseURI: databaseUri || 'mongodb://localhost:27017/dev',
   cloud: process.env.CLOUD_CODE_MAIN || __dirname + '/cloud/main.js',
   appId: process.env.APP_ID || 'myAppId',
@@ -20,6 +21,16 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+    appName: 'waboo',
+    publicServerURL: 'https://waboo.kerokuapp.com/parse',
+    emailAdapter: { 'parse-server-simple-mailgun-adapter',
+  // The address that your email come from
+      options: {
+      fromAddress:'postmaster@app82f5079118be4c0094b7679c0175553f.mailgun.org'
+      doman: 'app82f5079118be4c0094b7679c0175553f.mailgun.org',
+      apiKey: 'key-adc15d0b0f48e77e81c6a13db4c1818a',
+      }
   }
   
   // email verification
