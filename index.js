@@ -24,8 +24,8 @@ var api = new ParseServer({
   },
     appName: 'waboo',
     publicServerURL: 'https://waboo.kerokuapp.com/parse',
-    emailAdapter: { 'parse-server-simple-mailgun-adapter',
-  // The address that your email come from
+    emailAdapter: { 
+      module: 'parse-server-simple-mailgun-adapter',
       options: {
       fromAddress:'postmaster@app82f5079118be4c0094b7679c0175553f.mailgun.org'
       doman: 'app82f5079118be4c0094b7679c0175553f.mailgun.org',
