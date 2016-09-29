@@ -23,13 +23,13 @@ var api = new ParseServer({
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
   },
     appName: 'waboo',
-    publicServerURL: 'https://waboo.kerokuapp.com/parse',
+    publicServerURL: 'https://xxxx.kerokuapp.com/parse',
     emailAdapter: { 
       module: 'parse-server-simple-mailgun-adapter',
       options: {
-      fromAddress:'postmaster@wabooapp.com',
-      domain: 'wabooapp.com',
-      apiKey: 'key-8fb8246b461ab316d3487c825e951c53',
+      fromAddress:'postmaster@xxxxxxxx.com',
+      domain: 'xxxxxxxxxx.com',
+      apiKey: '',
       }
   }
   
