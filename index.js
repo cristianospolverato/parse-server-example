@@ -27,8 +27,8 @@ var api = new ParseServer({
     emailAdapter: { 
       module: 'parse-server-simple-mailgun-adapter',
       options: {
-      fromAddress:'postmaster@app82f5079118be4c0094b7679c0175553f.mailgun.org'
-      doman: 'app82f5079118be4c0094b7679c0175553f.mailgun.org',
+      fromAddress:'postmaster@app82f5079118be4c0094b7679c0175553f.mailgun.org',
+      domain: 'app82f5079118be4c0094b7679c0175553f.mailgun.org',
       apiKey: 'key-adc15d0b0f48e77e81c6a13db4c1818a',
       }
   }
